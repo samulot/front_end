@@ -6,7 +6,7 @@
         <title> SAAC&reg;| Login</title>
     </head>
 
-    <body onload="carregaAgencias()">
+    <body onload="carregarAgencias()">
         <div class="container">
 
             <div class="row" > 
@@ -15,49 +15,84 @@
                 </div>
             </div>
 
-            <div>
-                <div class="form-group">
-                    <label for="nomecliente">Cliente</label>
-                    <input type="text" class="form-control" id="nomecliente">
+            <div class="row" > 
+                <div class="col-12">
+                    <br><h4>Agendamento</h4><br>
                 </div>
-
-                <div class="form-group">
-                    <label for="emailcliente">Email</label>
-                    <input type="email" class="form-control" id="emailcliente">
-                </div>
-
-                <div class="form-group">
-                    <label for="celularcliente">Celular</label>
-                    <input type="text" class="form-control" id="celularcliente">
-                </div>
-
-                <div class="form-group form-check">
-                    <label class="form-check-label" for="selectData">Data</label>
-                    <input type="date" id="txtData" class="form-control">
-                </div>
-                
-                <div class="form-group form-check">
-                    <label class="form-check-label" for="selectAgencia">Agencia</label>
-                    <div id="optionAgencia"></div>
-                </div>
-
-                <div class="form-group form-check">
-                    <label class="form-check-label" for="horainicio">Hora Inicio</label>
-                    <input type="time" id="horainicio" class="form-control">
-                </div>
-
-                <div class="form-group form-check">
-                    <label class="form-check-label" for="horafim">Hora Fim</label>
-                    <input type="time" id="horafim" class="form-control">
-                </div>
-
-                <div class="form-group">
-                    <label for="observaçao">Obsevacao</label>
-                    <input type="text" class="form-control" id="observacao">
-                </div>
-
-
             </div>
+
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="txtNome">Cliente</label>
+                        <input type="text" class="form-control" id="txtNome" maxlength="100">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="txtEmail">Email</label>
+                        <input type="email" class="form-control" id="txtEmail" maxlength="100">
+                    </div>
+                </div>
+            </div>                   
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="txtcelular">Celular</label>
+                        <input type="phone" class="form-control" id="txtCelular" maxlength="20">
+                    </div>
+                </div>
+            </div>               
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="txtData">Data</label>
+                        <input type="date" class="form-control" id="txtData">
+                    </div>
+                </div>
+                <div class="Col-6">
+                    <div class="form-group">
+                        <label for="optionAgencia">Agencia</label>
+                        <div id="optionAgencia">***Carregando dados das Ag&ecir;ncias...;</div>
+                    </div>
+                </div>
+            </div>
+              
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="horaInicio">Hora Inicio</label>
+                        <div id="horaInicio"> HH:mm Incicio </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                    <label for="txtHora">Hora Fim</label>
+                    <input type="time" id="txtHoraFim" value="HH:mm" class="form-control" readonly>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="txtObs">Obsevacao</label>
+                        <input type="text" class="form-control" id="txtObs" maxlength="255">
+                    </div>
+                </div>
+            </div>  
+            
+            <div class="row">
+                <div class="col-12">
+                    <button class="btn btn-primary btn-lg float-right" onclick="enviarDados()">Cadastrar</button>
+                </div>    
+            </div>  
 
 
 
