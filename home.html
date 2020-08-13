@@ -6,7 +6,7 @@
         <!-- css + javascript do HOME -->
         <link rel="stylesheet" href="home.css">
         <script type="text/javascript" src="home.js"></script>
-        <title> MarCorp&reg;| Login</title>
+        <title> SAAC&reg;| Login</title>
 
 
     </head>
@@ -15,43 +15,53 @@
 
             <div class="row" > 
                 <div class="col-12 text-center">
-                    <h3 id="titulo"> Sistema de Agendamento de Ag&ecirc;ncias </h3>
+                    <h3 id="titulo"> Sistema de Agendamento de Atendimento &agrave; Clientes </h3>
                 </div>
+
             </div>
 
             <div class="row" id="linhaUser">
-                <div id="fotoUSER" class="col-xl-2 col-lg-2 col-md-4 col-sm-12 col-xs-12">
+                <div id="fotoUSER" class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-xs-4">
                     ** aqui vai a foto do usuario ***
                 </div>
+
                 <div id="infoUSER" class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-sm-12">
                     ** aqui vao as informacoes do usuario **
                 </div>
+
             </div>
 
             <div id="seletorDeRelatorio">
                 <label for="opcoes" id="tituloopcoes">Selecione Seu Relatorio</label>
                 <div class="row" id="opcoes">
+
                     <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xm-12">
                         <div class="form-group form-check">
                             <input type="checkbox" class="form-check-input" value="1" id="selectAgencia">
                             <label class="form-check-label" for="selectAgencia">Agencia</label>
                             <div id="optionAgencia">****</div>
                         </div>
+
                         <div class="form-group form-check">
                             <input type="checkbox" class="form-check-input" value="2" id="selectData">
                             <label class="form-check-label" for="selectData">Data</label>
                             <input type="date" id="txtData" class="form-control">
                         </div>
+
                         <div class="form-group form-check">
                             <input type="checkbox" class="form-check-input" value="4" id="selectCliente">
                             <label class="form-check-label" for="selectCliente">Cliente</label>
                             <input type="text" id="txtCliente" class="form-control">
                         </div>
+
                     </div>
+
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xm-12">
                         <button type="button" class="btn btn-primary" onclick="gerarRelatorio()">Gerar</button>
                     </div>
+
                 </div>
+
             </div>
 
             <div id="relatorio">

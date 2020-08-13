@@ -6,11 +6,12 @@
 */
 
 var templateFoto = `<img src="{{LINKFOTO}}" width="100%">`;
-var templateInfo = `Nome: {{NOME}} <br>
+var templateInfo = `Funcional: {{FUNCIONAL}} <br>
+                    Nome: {{NOME}} <br>
                     Email: {{EMAIL}} <br>
                     RACF: {{RACF}} <br>
-                    Funcional: {{FUNCIONAL}} <br>
                     Departamento: {{DEPARTAMENTO}} / {{UNIDADE}}`;
+                    
 function carregarInfoUsuario(){
     var userSTR = localStorage.getItem("ScheduleUSER");
     if (!userSTR){    // o objeto não existe no Local Storage
