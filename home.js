@@ -60,6 +60,7 @@ function preencheComboBox(listaAgencias){
     document.getElementById("optionAgencia").innerHTML = novoSelect;
 }
 
+
 function gerarRelatorio(){
     // para saber se tá todo mundo "checado"
     var combinacao = 0;
@@ -78,4 +79,84 @@ function gerarRelatorio(){
     console.log(op.options[op.selectedIndex].value);
     console.log(document.getElementById("txtData").value);
     console.log(document.getElementById("txtCliente").value);
+    var txtData = document.getElementById("txtData").value;
+    var txtNovaData = txtData.substr(8,2)+"/"+txtData.substr(5,2)+"/"+txtData.substr(0,4);
+
+    var url = "http://localhost:8088/agendamentos";
+    // preciso complementar todas as URL 
+    if (combinacao == 0){
+        url = url + "/todos";
+    }
+    else if (combinacao == 1){
+        url = url + "/filtrarporagencia?agencia="+op.options[op.selectedIndex].value;
+    }
+    else if (combinacao == 2){
+        url = url + "/filtrarpordata?data_agendamento="+ txtNovaData;
+    }
+    else if (combinacao == 3){
+
+    }
+    else if (combinacao == 4){
+        url = url + "/filtarporcliente?nomecli="+document.getElementById("txtCliente").value;
+    }
+    else if (combinacao == 5){
+        
+    }
+    else if (combinacao == 6){
+        
+    }
+    else if (combinacao == 7){
+        
+    }
+    
+
+    fetch(url)
+       .then(res => res.json())
+       .then(res => preencheRelatorio(res));
 }
+
+function preencheRelatorio(res){
+    var templateLinha = `<div class="row">
+                <div class="col-1"> {{PROTO}} </div>
+                <div class="col-2"> {{CLI}} </div>
+                <div class="col-2"> {{EMAIL}} </div>
+                <div class="col-2"> {{CEL}} </div>
+                <div class="col-1"> {{AG}} </div>
+                <div class="col-2"> {{DATAHORA}} </div>
+                <div class="col-2"> {{OBS}} </div>
+       </div>`;
+
+       var rel = "";
+       for (i=0;i<res.length; i++){
+           var ag = res[i];
+           rel += templateLinha.replace("{{PROTO}}", ag.num_seq)
+                               .replace("{{CLI}}", ag.nomeCliente)
+                               .replace("{{EMAIL}}", ag.emailCliente)
+                               .replace("{{CEL}}", ag.celularCliente)
+                               .replace("{{AG}}", ag.agencia.nome)
+                               .replace("{{DATAHORA}}", ag.dataAgendamento+"-"+ag.horaAgendamento)
+                               .replace("{{OBS}}", ag.observacoes);
+       }
+       document.getElementById("relatorio").innerHTML = rel;
+}
+
+
+
+
+
+/*
+function gerarRelatorio(){
+    fetch("http://localhost:8088/agendamentos/todos")
+        .then(res => res.json())
+        .then(res => trataResultado(res));
+}
+ 
+function trataResultado(res){
+    var rel = "";
+    for(i=0; i<res.length;i++){
+        var ag = res[i];
+        rel+=ag.num_seq + "-" + ag.nomeCliente + "-" + ag.emailCliente + "-" + ag.celularCliente +"<br>";
+    }
+    document.getElementById("relatorio").innerHTML = rel;
+}
+*/
