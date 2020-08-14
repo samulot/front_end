@@ -4,7 +4,8 @@
        usuario
    2 - se não existir esse item? retorna para o index (sinal que não tem usuário conectado)
 */
-
+var relatorio;
+var linharel = "{{PROTO}};{{CLI}};{{EMAIL}};{{CEL}};{{AG}};{{DATA}};{{HORA}};{{OBS}}\n";
 var templateFoto = `<img src="{{LINKFOTO}}" width="100%">`;
 var templateInfo = `Funcional: {{FUNCIONAL}} <br>
                     Nome: {{NOME}} <br>
@@ -112,10 +113,12 @@ function gerarRelatorio(){
 
     fetch(url)
        .then(res => res.json())
-       .then(res => preencheRelatorio(res));
+       .then(res => trataRelatorio(res));
+       //.then(res => preencheRelatorio(res)); 
 }
-
+/*
 function preencheRelatorio(res){
+    relatorio = res;
     var templateLinha = `<div class="row">
                 <div class="col-1"> {{PROTO}} </div>
                 <div class="col-2"> {{CLI}} </div>
@@ -139,12 +142,49 @@ function preencheRelatorio(res){
        }
        document.getElementById("relatorio").innerHTML = rel;
 }
+*/
 
 function logout(){
     localStorage.removeItem("ScheduleUSER");
     window.location = "index.html";
 }
 
+function trataRelatorio(res) {
+    relatorio = res;
+    // alert ("passou por aqui");
+    var rel = "<br><table border=2 width='100%'>";
+    rel += "<tr><th>Agencia</th><th>Nome</th><th>Email</th><th>Telefone</th><th>Data</th><th>Hora</th><th>Obs</th></tr>";
+    for(i=0 ; i < res.length; i++){
+        var ag= res[i];
+        rel += "<tr>" + "<td>"+ ag.agencia.nome + "</td>" + "<td>" + ag.nomeCliente + "</td>" + "<td>" + ag.emailCliente + "</td>"+ "<td>" + ag.celularCliente + "</td>" + "<td>" + ag.dataAgendamento + "</td>"+ "<td>" + ag.horaAgendamento + "</td>" + "<td>" + ag.observacoes + "</td>" + "</tr>";
+    }
+    rel += "</table><br>";
+    console.log(rel);
+    document.getElementById("relatorio").innerHTML = rel;
+
+}
+
+
+function gerarCSV(){
+    
+    var rel = "";
+    for (i=0 ; i < relatorio.length ; i++){
+        var ag = relatorio[i];
+        rel += linharel.replace("{{PROTO}}", ag.num_seq)
+                               .replace("{{CLI}}", ag.nomeCliente)
+                               .replace("{{EMAIL}}", ag.emailCliente)
+                               .replace("{{CEL}}", ag.celularCliente)
+                               .replace("{{AG}}", ag.agencia.nome)
+                               .replace("{{DATA}}", ag.dataAgendamento)
+                               .replace("{{HORA}}", ag.horaAgendamento)
+                               .replace("{{OBS}}", ag.observacoes);
+    }
+    var hiddenElement = document.createElement('a');
+    hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(rel);
+    hiddenElement.target = '_blank';
+    hiddenElement.download = 'relatorio.csv';
+    hiddenElement.click();
+}
 
 
 
