@@ -113,3 +113,7 @@ function geraProtocolo(agendamento){
     alert("Agendamento Concluido. Numero do Protocolo "+agendamento.num_seq);
 
 }
+
+function logout(){
+    window.location = "index.html";
+}

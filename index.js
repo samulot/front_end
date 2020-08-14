@@ -64,3 +64,4 @@ function logar(objeto){
     localStorage.setItem("ScheduleUSER",objSTR);   // armazenei no local storage
     window.location = "home.html";                 // vou pra página principal
 }
+

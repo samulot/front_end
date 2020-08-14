@@ -91,22 +91,22 @@ function gerarRelatorio(){
         url = url + "/filtrarporagencia?agencia="+op.options[op.selectedIndex].value;
     }
     else if (combinacao == 2){
-        url = url + "/filtrarpordata?data_agendamento="+ txtNovaData;
+        url = url + "/filtrarpordata?data_agendamento="+txtNovaData;
     }
     else if (combinacao == 3){
-
+        url = url + "/filtrarporagenciadata?agencia="+op.options[op.selectedIndex].value+"&data_agendamento="+txtNovaData;
     }
     else if (combinacao == 4){
         url = url + "/filtarporcliente?nomecli="+document.getElementById("txtCliente").value;
     }
     else if (combinacao == 5){
-        
+        url = url + "/filtarporclienteagencia?nomecli="+document.getElementById("txtCliente").value+"&agencia="+op.options[op.selectedIndex].value;
     }
     else if (combinacao == 6){
-        
+        url = url + "/filtrarpordatacliente?data_agendamento="+txtNovaData+"&nomecli="+document.getElementById("txtCliente").value;
     }
     else if (combinacao == 7){
-        
+        url = url + "/filtrarporagenciadatacliente?agencia="+op.options[op.selectedIndex].value+"&data_agendamento="+txtNovaData+"&nomecli="+document.getElementById("txtCliente").value;
     }
     
 
@@ -140,6 +140,10 @@ function preencheRelatorio(res){
        document.getElementById("relatorio").innerHTML = rel;
 }
 
+function logout(){
+    localStorage.removeItem("ScheduleUSER");
+    window.location = "index.html";
+}
 
 
 
