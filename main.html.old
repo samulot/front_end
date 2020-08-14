@@ -8,21 +8,21 @@
     <body>
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center" id="cabecalho">
+                <div class="col-12 text-center">
                     <h3><b>Bem Vindo ao Sistema de Agendamento de Atendimento &agrave; Clientes</b></h3><br><br>
                 </div>
-                <div class="col-12" id="texto">
+                <div class="col-12">
                     <h6><b>Favor escolher a op&ccedil;&atilde;o desejada:</b></h6>
                 </div>
             </div>
             
-            <div class="dropdown"id="texto_b">
+            <div class="dropdown">
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Selecione
                 </a>
               
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <a class="dropdown-item" href="agendamento.html">Agendar  Cliente</a>
+                  <a class="dropdown-item" href="agendamento.html">Cadastrar Cliente</a>
                   <a class="dropdown-item" href="index.html">Consultar Cliente</a>
                   
                 </div>
@@ -37,3 +37,6 @@
     </body>
 
 </html>
+
+
+

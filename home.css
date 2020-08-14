@@ -5,7 +5,7 @@
 
 #tituloopcoes{
     color: white;
-    background-color: #0369D9;
+    background-color: #007bff;
     border-radius: 10px;
     padding: 10px;
     margin-bottom: -10px;
@@ -22,3 +22,24 @@
     margin-top: 2%;
     margin-bottom: 2%;
 }
+
+#cabecalho{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    background: orange;
+    margin-top: 20px;
+}
+
+/*
+#relatorio{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 25px;
+    margin-inline-end: -17px;
+    margin-inline-start: -17px;
+    margin-bottom: 30px;
+
+}
+*/

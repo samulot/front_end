@@ -1,0 +1,18 @@
+#cabecalho{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    background: orange;
+    margin-top: 20px;
+}
+
+#texto{
+    margin-top: 30px;
+    margin-left: 350px;
+}
+
+#dropdownMenuLink{
+    background: orange;
+    margin-left: 380px;
+    width: 200px;
+}

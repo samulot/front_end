@@ -14,7 +14,7 @@
         <div class="container">
 
             <div class="row" > 
-                <div class="col-12 text-center" id="cabecalho">
+                <div class="col-12 text-center">
                     <h3 id="titulo"> Sistema de Agendamento de Atendimento &agrave; Clientes </h3>
                 </div>
 
@@ -22,12 +22,7 @@
 
             <div class="row">
                 <div class="col-12">
-                    <button class="btn btn-primary btn-sn float-right" onclick="logout()"
-                    style="
-                    margin-top: 20px;
-                    width: 100px;
-                    margin-right: 10px;"
-                    >Logout</button>
+                    <button class="btn btn-primary btn-sm float-right" onclick="logout()">Logout</button>
                 </div>    
             </div>  
 
@@ -68,24 +63,27 @@
                     </div>
 
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xm-12">
-                        <button type="button" class="btn btn-primary btn-sn" onclick="gerarRelatorio()"
-                        style="
-                        margin-left: 233px;
-                        margin-top: 22px;
-                        width: 100px;"
-                        >Gerar</button>
-                        <button type="button" class="btn btn-primary btn-sn float-right" onclick="gerarCSV()"
-                        style="margin-top: 40px;">Export CSV</button>  
-                        <button type="button"class="btn btn-primary btn-sn float-right" onclick="gerarImpressao()"
-                        style="
-                        margin-top: 120px;
-                        margin-right: -103px;
-                        width: 100px;"
-                        >Imprimir</button>
+                        <button type="button" class="btn btn-primary float-right" onclick="gerarRelatorio()">Gerar</button>
                     </div>
+
                 </div>
 
             </div>
+
+            
+            <div class="row">
+                <div class="col-12">
+                    <br>
+                    <button type="button" class="btn btn-primary btn-sm float-right" onclick="gerarCSV()">Export CSV</button>
+                </div>    
+            </div>  
+
+            <div class="row">
+                <div class="col-12">
+                    <br>
+                    <button type="button" class="btn btn-primary btn-sm float-right" onclick="gerarImpressao()">Imprimir</button>
+                </div>    
+            </div>  
 
             <div class="row" id="tabela">
                 <div class="col-12">
@@ -99,21 +97,27 @@
                     <div class="col-1">
                         Protocolo
                     </div>
+
                     <div class="col-2">
                         Cliente
                     </div>
+
                     <div class="col-2">
                         Email
                     </div>
+
                     <div class="col-2">
                         Celular
                     </div>
+
                     <div class="col-1">
                         Agencia
                     </div>
+
                     <div class="col-2">
                         Data/Hora
                     </div>
+
                     <div class="col-2">
                         Obs
                     </div>

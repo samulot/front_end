@@ -186,6 +186,13 @@ function gerarCSV(){
     hiddenElement.click();
 }
 
+function gerarImpressao(){
+
+    var impressao = localStorage.getItem("ScheduleUSER");
+    window.print();
+    localStorage.removeItem("ScheduleUSER")    
+}
+
 
 
 /*

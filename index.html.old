@@ -7,7 +7,7 @@
     </head>
     <body>
         <div class="container">
-            <div class="row" id="cabecalho">
+            <div class="row">
                 <div class="col-12 text-center">
                     <h3><b>Bem Vindo ao Sistema de Agendamento de Atendimento &agrave; Clientes</b></h3><br><br>
                 </div>
@@ -15,17 +15,13 @@
 
             <div class="row">
                 <div class="col-12">
-                    <button class="btn btn-primary btn-lg float-right" onclick="logout()"
-                    style="
-                    margin-top: 20px;"
-                    >Logout</button>
+                    <button class="btn btn-primary btn-sm float-right" onclick="logout()">Logout</button>
                 </div>    
             </div>
 
             <div class="row">     
                 <div class="col-12">
                     <h6><b>Para obter acesso, favor autenticar-se</b></h6>
-                    
                 </div>
             </div>
             
@@ -41,7 +37,7 @@
                         <label for="txtSenha">Sua senha</label>
                         <input type="password" class="form-control" id="txtSenha"><small>Entre com sua senha</small>
                     </div>
-                    <button type="button" class="btn btn-primary btn-lg" onclick="autenticar()">Enviar Dados</button>
+                    <button type="button" class="btn btn-primary" onclick="autenticar()">Enviar Dados</button>
                 </div>
             </div>
 
@@ -60,3 +56,6 @@
     </body>
 
 </html>
+
+
+
