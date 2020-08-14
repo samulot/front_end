@@ -65,3 +65,6 @@ function logar(objeto){
     window.location = "home.html";                 // vou pra página principal
 }
 
+function logout(){
+    window.location = "main.html";
+}

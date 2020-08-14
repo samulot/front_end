@@ -115,5 +115,5 @@ function geraProtocolo(agendamento){
 }
 
 function logout(){
-    window.location = "index.html";
+    window.location = "main.html";
 }
